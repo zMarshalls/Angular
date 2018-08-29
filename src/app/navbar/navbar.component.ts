@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +13,11 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $('#login').webuiPopover({url:'#login-form'});
   }
 
   itMenu = ['Sobre','Contato', 'Parceiros'];
 
+  //npm install --save webui-popover
   
-
 }
