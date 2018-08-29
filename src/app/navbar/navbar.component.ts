@@ -19,5 +19,6 @@ export class NavbarComponent implements OnInit {
   itMenu = ['Sobre','Contato', 'Parceiros'];
 
   //npm install --save webui-popover
+  // https://catalin.red/simple-and-effective-dropdown-login-box/
   
 }

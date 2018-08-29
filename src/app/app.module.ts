@@ -6,6 +6,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
 import { ParceirosComponent } from './parceiros/parceiros.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { ParceirosComponent } from './parceiros/parceiros.component';
     NavbarComponent,
     SobreComponent,
     ContatoComponent,
-    ParceirosComponent
+    ParceirosComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
