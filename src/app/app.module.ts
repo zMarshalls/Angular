@@ -8,6 +8,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { ParceirosComponent } from './parceiros/parceiros.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
     SobreComponent,
     ContatoComponent,
     ParceirosComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

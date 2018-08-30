@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
+
+declare var $: any;
+declare var require: any;
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,15 +13,19 @@ export class NavbarComponent implements OnInit {
 
   logo = 'Oficina Raudel';
 
+  isConected = true;
+
+  //Coisas do Usuario
+  img = require('../imgs/user.jpg');
+  usuario = "Leduar Araujo";
+
   constructor() { }
 
   ngOnInit() {
-    $('#login').webuiPopover({url:'#login-form'});
+    console.log($(".dropdown-trigger"))
+    $(".dropdown-trigger").dropdown();
+    
   }
 
   itMenu = ['Sobre','Contato', 'Parceiros'];
-
-  //npm install --save webui-popover
-  // https://catalin.red/simple-and-effective-dropdown-login-box/
-  
 }
