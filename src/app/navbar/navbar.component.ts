@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
 
   logo = 'Oficina Raudel';
 
-  isConected = true;
+  isConected = false;
 
   //Coisas do Usuario
   img = require('../imgs/user.jpg');

@@ -16,9 +16,9 @@
       </ul>
     </div>
 
-    <ul class="right">
+    <ul *ngIf="isConected" class="right">
       <li>
-        <div *ngIf="isConected" class="chip">
+        <div class="chip">
             <img [src]="img"  alt="Contact Person"> {{ usuario }}
         </div>
       </li>
