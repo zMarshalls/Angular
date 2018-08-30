@@ -22,9 +22,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log($(".dropdown-trigger"))
-    $(".dropdown-trigger").dropdown();
-    
+    $(".dropdown-trigger").dropdown(); 
   }
 
   itMenu = ['Sobre','Contato', 'Parceiros'];
