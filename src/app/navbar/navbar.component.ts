@@ -12,7 +12,7 @@ declare var require: any;
 export class NavbarComponent implements OnInit {
 
   logo = 'Oficina Raudel';
-
+  bgPerfil = require('../imgs/bgperfil.jpg');
   isConected = true;
 
   //Coisas do Usuario

@@ -2,7 +2,7 @@
   <div class="nav-wrapper grey darken-4">
     <a routerLink="/" class="brand-logo center">{{ logo }}</a>
 
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <li>
@@ -13,14 +13,14 @@
       </li>
     </ul>
 
-    <div *ngIf="!isConected" class="right left hide-on-med-and-down">
+    <div *ngIf="!isConected" class="right hide-on-med-and-down">
       <ul id="nav-mobile">
         <li><a id="login" routerLink="/Login">Login</a></li>
         <li><a id="login" routerLink="/SignUp">SignUp</a></li>
       </ul>
     </div>
 
-    <ul *ngIf="isConected" class="right left hide-on-med-and-down">
+    <ul *ngIf="isConected" class="right hide-on-med-and-down">
       <li>
         <div class="chip">
           <img [src]="img" alt="Contact Person"> {{ usuario }}
@@ -38,15 +38,26 @@
   <li><a routerLink="">Marcar</a></li>
   <li><a routerLink="">Consultar Situação</a></li>
   <li><a routerLink="">Sair</a></li>
-  
+
 </ul>
 
 <!-- sidenav -->
 <ul class="sidenav" id="mobile-demo">
   <li>
-    <div class="chip">
-      <img [src]="img" alt="Contact Person"> {{ usuario }}
+    <div class="user-view">
+        <div class="background">
+            <img [src]="bgPerfil">
+        </div>
+
+      <a href="#user"><img class="circle" [src]="img"></a>
+      <a href="#name"><span class="white-text name">{{ usuario }}</span></a>
     </div>
+  </li>
+  
+  <li class="divider" tabindex="-1"></li>
+
+  <li>
+    <a routerLink="/">Home</a>
   </li>
 
   <li *ngFor="let item of itMenu">
