@@ -13,11 +13,12 @@ export class NavbarComponent implements OnInit {
 
   logo = 'Oficina Raudel';
   bgPerfil = require('../imgs/bgperfil.jpg');
-  isConected = true;
+  isConected = false;
 
   //Coisas do Usuario
   img = require('../imgs/user.jpg');
   usuario = "Leduar Araujo";
+  email = "leduar.teste@email.com";
 
   constructor() { }
 

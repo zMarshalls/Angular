@@ -6,7 +6,7 @@
 
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <li>
-        <a routerLink="/">Home</a>
+        <a routerLink="/">Início</a>
       </li>
       <li *ngFor="let item of itMenu">
         <a routerLink="/{{ item }}">{{ item }}</a>
@@ -15,8 +15,8 @@
 
     <div *ngIf="!isConected" class="right hide-on-med-and-down">
       <ul id="nav-mobile">
-        <li><a id="login" routerLink="/Login">Login</a></li>
-        <li><a id="login" routerLink="/SignUp">SignUp</a></li>
+        <li><a id="login" routerLink="/Login">Entrar</a></li>
+        <li><a id="signUp" routerLink="/SignUp">Cadastrar</a></li>
       </ul>
     </div>
 
@@ -33,40 +33,45 @@
 
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-
   <li><a routerLink="">Perfil</a></li>
   <li><a routerLink="">Marcar</a></li>
   <li><a routerLink="">Consultar Situação</a></li>
   <li><a routerLink="">Sair</a></li>
-
 </ul>
 
 <!-- sidenav -->
 <ul class="sidenav" id="mobile-demo">
-  <li>
-    <div class="user-view">
-        <div class="background">
-            <img [src]="bgPerfil">
-        </div>
 
-      <a href="#user"><img class="circle" [src]="img"></a>
-      <a href="#name"><span class="white-text name">{{ usuario }}</span></a>
+  <li *ngIf="!isConected"><a id="login" routerLink="/Login">Entrar</a></li>
+  <li *ngIf="!isConected"><a id="signUp" routerLink="/SignUp">Cadastrar</a></li>
+
+
+  <li *ngIf="isConected">
+    <div class="user-view">
+      <div class="background">
+        <img class="imgBgPerfil" [src]="bgPerfil">
+      </div>
+
+      <div class="row">
+        <div class="col s12 offset-s8">
+          <img class="circle" [src]="img">
+        </div>
+      </div>
+
+
+      <a class="dropdown-trigger" data-target="dropdown1"><span class="white-text name">{{ usuario }}</span></a>
+      <span class="white-text email">{{ email }}</span>
     </div>
   </li>
-  
+
   <li class="divider" tabindex="-1"></li>
 
   <li>
-    <a routerLink="/">Home</a>
+    <a routerLink="/">Início</a>
   </li>
 
   <li *ngFor="let item of itMenu">
     <a routerLink="/{{ item }}">{{ item }}</a>
   </li>
-
-  <li><a id="login" routerLink="/Login">Login</a></li>
-  <li><a id="login" routerLink="/SignUp">SignUp</a></li>
-
-  <li><a class="dropdown-trigger" data-target="dropdown1">Mais</a></li>
 
 </ul>
