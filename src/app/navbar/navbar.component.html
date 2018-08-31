@@ -1,7 +1,10 @@
 <nav>
   <div class="nav-wrapper grey darken-4">
     <a routerLink="/" class="brand-logo center">{{ logo }}</a>
-    <ul id="nav-mobile" class="left">
+
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
       <li>
         <a routerLink="/">Home</a>
       </li>
@@ -10,28 +13,49 @@
       </li>
     </ul>
 
-    <div *ngIf="!isConected" class="right">
+    <div *ngIf="!isConected" class="right left hide-on-med-and-down">
       <ul id="nav-mobile">
         <li><a id="login" routerLink="/Login">Login</a></li>
         <li><a id="login" routerLink="/SignUp">SignUp</a></li>
       </ul>
     </div>
 
-    <ul *ngIf="isConected" class="right">
+    <ul *ngIf="isConected" class="right left hide-on-med-and-down">
       <li>
         <div class="chip">
-            <img [src]="img"  alt="Contact Person"> {{ usuario }}
+          <img [src]="img" alt="Contact Person"> {{ usuario }}
         </div>
       </li>
-      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons right">settings</i></a></li>
+      <li><a class="dropdown-trigger" data-target="dropdown1"><i class="material-icons right">settings</i></a></li>
     </ul>
   </div>
 </nav>
 
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+
+  <li><a routerLink="">Perfil</a></li>
+  <li><a routerLink="">Marcar</a></li>
+  <li><a routerLink="">Consultar Situação</a></li>
+  <li><a routerLink="">Sair</a></li>
+  
+</ul>
+
+<!-- sidenav -->
+<ul class="sidenav" id="mobile-demo">
+  <li>
+    <div class="chip">
+      <img [src]="img" alt="Contact Person"> {{ usuario }}
+    </div>
+  </li>
+
+  <li *ngFor="let item of itMenu">
+    <a routerLink="/{{ item }}">{{ item }}</a>
+  </li>
+
+  <li><a id="login" routerLink="/Login">Login</a></li>
+  <li><a id="login" routerLink="/SignUp">SignUp</a></li>
+
+  <li><a class="dropdown-trigger" data-target="dropdown1">Mais</a></li>
+
 </ul>

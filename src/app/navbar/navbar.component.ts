@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
 
   logo = 'Oficina Raudel';
 
-  isConected = false;
+  isConected = true;
 
   //Coisas do Usuario
   img = require('../imgs/user.jpg');
@@ -22,7 +22,8 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(".dropdown-trigger").dropdown(); 
+    $(".dropdown-trigger").dropdown();
+    $('.sidenav').sidenav();
   }
 
   itMenu = ['Sobre','Contato', 'Parceiros'];
