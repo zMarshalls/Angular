@@ -3,13 +3,15 @@
 
     <h3 class="center-align">Cadastro</h3>
 
-    <form class="col s12">
+    <form #signupForm="ngForm" (submit)="validar(signupForm)" class="col s12">
+
       <div class="row">
         <div class="input-field col s12 m10 offset-m1">
           <input id="first_name" type="text" class="validate">
           <label for="first_name">Nome</label>
         </div>
       </div>
+
       <div class="row">
         <div class="input-field col s12 m5 offset-m1">
           <input id="cpf" type="text" class="validate">
@@ -20,7 +22,6 @@
           <label for="fone">Telefone</label>
         </div>
       </div>
-
 
       <div class="row">
         <div class="input-field col s12 m10 offset-m1">
@@ -36,26 +37,22 @@
         </div>
       </div>
 
-
       <div class="row">
         <div class="input-field col s12 m5 offset-m1">
           <input id="password" type="password" class="validate">
           <label for="password">Senha</label>
         </div>
-
-
         <div class="input-field col s12 m5">
           <input id="passwordConfirm" type="password" class="validate">
           <label for="passwordConfirm">Confirmar Senha</label>
         </div>
       </div>
 
-
-
       <div class="row">
         <div class="input-field col s12 m12 ">
           <fieldset class="fieldset">
             <legend>Endereço</legend>
+
             <div class="row">
               <div class="input-field col s12 m5 offset-m1">
                 <select id="pais">
@@ -72,8 +69,6 @@
               </div>
             </div>
 
-
-
             <div class="row">
               <div class="input-field col s12 m5 offset-m1">
                 <select id="estado">
@@ -89,7 +84,6 @@
                 <label for="municipio">Município</label>
               </div>
             </div>
-
 
             <div class="row">
               <div class="input-field col s12 m10 offset-m1">
@@ -112,7 +106,6 @@
               </div>
             </div>
 
-
             <div class="row">
               <div class="input-field col s12 m5 offset-m1">
                 <input id="numero" type="text" class="validate">
@@ -124,12 +117,9 @@
               </div>
             </div>
 
-
           </fieldset>
         </div>
       </div>
-
-
 
       <div class="row">
         <div class="input-field col s12 m5 offset-m1">
@@ -140,9 +130,10 @@
         </div>
 
         <div class="input-field">
-          <button class="btn waves-effect waves-light col s12 m2 offset-m9" type="submit" name="action">Cadastrar</button>
+          <button class="btn waves-effect waves-light col s12 m2 offset-m9" type="submit">Cadastrar</button>
         </div>
       </div>
+
     </form>
   </div>
 </div>

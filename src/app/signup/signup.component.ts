@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
+import { AuthenticationService } from '../authentication.service';
+import { NgForm } from '@angular/forms';
+
+
 declare var $: any;
 
 @Component({
@@ -7,8 +14,6 @@ declare var $: any;
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  constructor() { }
 
   ngOnInit() {
     // Inicializa os elementos
@@ -20,8 +25,13 @@ export class SignupComponent implements OnInit {
     $('#fone').mask('(00) 0 0000-0000');
     $('#cep').mask('00000-000');
 
-
   }
+
+  validar(signupForm: NgForm){
+    
+    console.log(signupForm)
+  }
+
 
 
 }
