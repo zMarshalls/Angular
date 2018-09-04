@@ -12,9 +12,15 @@ export class AuthenticationService {
    }
 
    register(user:User){
-     this.fbAth.auth.createUserWithEmailAndPassword(user.email, user.passw)
-     .then()
-     .catch();
+     this.fbAth.auth.createUserWithEmailAndPassword(
+       user.email, 
+       user.passw
+      ).then(newUser => {
+        console.log(newUser)
+      }).catch(err => {
+        console.log(err)
+      }
+     );
    }
 
 }
