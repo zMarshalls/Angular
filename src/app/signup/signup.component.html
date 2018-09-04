@@ -18,28 +18,28 @@
           <label for="cpf">CPF</label>
         </div>
         <div class="input-field col s12 m5">
-          <input id="fone" type="text" class="validate">
+          <input [(ngModel)]="user.fone" name="fone" id="fone" type="text" class="validate">
           <label for="fone">Telefone</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s12 m10 offset-m1">
-          <input id="nasc" type="text" class="datepicker">
+          <input [(ngModel)]="user.nasc" name="nasc" id="nasc" type="text" class="datepicker">
           <label for="nasc">Data de Nascimento</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s12 m10 offset-m1">
-          <input id="email" type="email" class="validate">
+          <input [(ngModel)]="user.email" name="email" id="email" type="email" class="validate">
           <label for="email">Email</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s12 m5 offset-m1">
-          <input id="password" type="password" class="validate">
+          <input [(ngModel)]="user.password" name="password" id="password" type="password" class="validate">
           <label for="password">Senha</label>
         </div>
         <div class="input-field col s12 m5">
@@ -55,7 +55,7 @@
 
             <div class="row">
               <div class="input-field col s12 m5 offset-m1">
-                <select id="pais">
+                <select [(ngModel)]="user.pais" name="pais" id="pais">
                   <option value="" disabled selected>Selecione seu País</option>
                   <option value="BR">Brasil</option>
                   <option value="UK">Ulkrain</option>
@@ -64,14 +64,14 @@
                 <label for="pais">País</label>
               </div>
               <div class="input-field col s12 m5">
-                <input id="cep" type="text" class="validate">
+                <input [(ngModel)]="user.cep" name="cep" id="cep" type="text" class="validate">
                 <label for="cep">CEP</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12 m5 offset-m1">
-                <select id="estado">
+                <select [(ngModel)]="user.estado" name="estado" id="estado">
                   <option value="" disabled selected>Selecione seu Estado</option>
                   <option value="AL">Alagoas</option>
                   <option value="PE">Pernambuco</option>
@@ -80,39 +80,39 @@
                 <label for="estado">Estado</label>
               </div>
               <div class="input-field col s12 m5">
-                <input id="municipio" type="text" class="validate">
+                <input [(ngModel)]="user.municipio" name="municipio" id="municipio" type="text" class="validate">
                 <label for="municipio">Município</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12 m10 offset-m1">
-                <input id="cidade" type="text" class="validate">
+                <input [(ngModel)]="user.cidade" name="cidade" id="cidade" type="text" class="validate">
                 <label for="cidade">Cidade</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12 m10 offset-m1">
-                <input id="bairro" type="text" class="validate">
+                <input [(ngModel)]="user.bairro" name="bairro" id="bairro" type="text" class="validate">
                 <label for="bairro">Bairro</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12 m10 offset-m1">
-                <input id="rua" type="text" class="validate">
+                <input [(ngModel)]="user.rua" name="rua" id="rua" type="text" class="validate">
                 <label for="rua">Rua</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12 m5 offset-m1">
-                <input id="numero" type="text" class="validate">
+                <input [(ngModel)]="user.numero" name="numero" id="numero" type="text" class="validate">
                 <label for="numero">Número</label>
               </div>
               <div class="input-field col s12 m5">
-                <input id="complemento" type="text" class="validate">
+                <input [(ngModel)]="user.complemento" name="complemento" id="complemento" type="text" class="validate">
                 <label for="complemento">Complemento</label>
               </div>
             </div>
@@ -124,7 +124,7 @@
       <div class="row">
         <div class="input-field col s12 m5 offset-m1">
           <label>
-            <input type="checkbox" />
+            <input id="terms" type="checkbox" />
             <span>Aceito os <a routerLink="#modal1">Termos de Condições</a>.</span>
           </label>
         </div>

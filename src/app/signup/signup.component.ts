@@ -35,10 +35,28 @@ export class SignupComponent implements OnInit {
   }
 
   validar(){
+    if (!$("#terms").prop( "checked" )){
+      alert("É preciso aceitar os termos.");
+      return;
+    }
 
-    console.log(this.user)
+    let user = {...this.user}
+    
+    user.cpf = this.unmask(this.user.cpf);
+    // user.fone = this.unmask(this.user.fone);
+    // user.cep = this.unmask(this.user.cep);
 
-    // this.auth.register(this.user);
+    console.log(user)
+
+    // this.auth.register(user);
+  }
+
+  private unmask(doc: string) {
+    return doc.replace(".", "")
+              .replace("-", "")
+              .replace("(", "")
+              .replace(")", "")
+              .replace("/", "")
   }
 
 
