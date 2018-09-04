@@ -4,6 +4,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../authentication.service';
 import { NgForm } from '@angular/forms';
+import { User } from '../models/user';
 
 
 declare var $: any;
@@ -14,6 +15,12 @@ declare var $: any;
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+
+  user: User;
+
+  constructor(private auth: AuthenticationService){ 
+    this.user = new User();
+  }
 
   ngOnInit() {
     // Inicializa os elementos
@@ -27,9 +34,11 @@ export class SignupComponent implements OnInit {
 
   }
 
-  validar(signupForm: NgForm){
-    
-    console.log(signupForm)
+  validar(){
+
+    console.log(this.user)
+
+    // this.auth.register(this.user);
   }
 
 
