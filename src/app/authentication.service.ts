@@ -14,7 +14,7 @@ export class AuthenticationService {
    register(user:User){
      this.fbAth.auth.createUserWithEmailAndPassword(
        user.email, 
-       user.passw
+       user.password
       ).then(newUser => {
         console.log(newUser)
       }).catch(err => {

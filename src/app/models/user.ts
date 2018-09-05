@@ -5,7 +5,7 @@ export class User {
     public fone: string;
     public dtNac: string;
     public email: string;
-    public passw : string;
+    public password : string;
     public pais : string;
     public cep : string;
     public estado : string;
