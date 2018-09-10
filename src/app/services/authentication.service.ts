@@ -1,27 +1,34 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(private fbAth: AngularFireAuth,private svUser: UserService) { 
+  constructor(private fbAth: AngularFireAuth) { 
 
    }
 
-   register(user:User){
-     this.fbAth.auth.createUserWithEmailAndPassword(user.email, user.password)
-      .then(newUser => {
-      console.log('usuario criado')
+  register(email: string, password: string){
+    return this.fbAth.auth.createUserWithEmailAndPassword(email, password);
+  }
 
-        this.svUser.register(user);
-      }).catch(err => {
-        console.log(err)
-      }
-     );
-   }
+  signIn(email: string, password: string){
+    return this.fbAth.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  changePassword(email: string, password: string){
+    return this.fbAth.auth.confirmPasswordReset(email, password);
+  }
+
+  logout(){
+    return this.fbAth.auth.signOut();
+  }
+
+  isLogged() {
+    return this.fbAth.user;
+  }
 
 }

@@ -5,7 +5,6 @@ export class User {
     public fone: string;
     public dtNac: string;
     public email: string;
-    public password : string;
     public pais : string;
     public cep : string;
     public estado : string;
@@ -15,5 +14,6 @@ export class User {
     public rua : string;
     public numero : string;
     public complemento : string;
+    public img: string;
 
 }

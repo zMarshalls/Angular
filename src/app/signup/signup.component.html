@@ -25,7 +25,7 @@
 
       <div class="row">
         <div class="input-field col s12 m10 offset-m1">
-          <input [(ngModel)]="user.dtNac" name="dtNac" id="dtNac" type="text" class="datepicker" required="" aria-required="true">
+          <input [(ngModel)]="user.dtNac" name="dtNac" id="dtNac" type="date" class="validate" required="" aria-required="true">
           <label for="dtNac">Data de Nascimento</label>
         </div>
       </div>
@@ -39,7 +39,7 @@
 
       <div class="row">
         <div class="input-field col s12 m5 offset-m1">
-          <input [(ngModel)]="user.password" name="password" id="password" type="password" class="validate" required="" aria-required="true">
+          <input [(ngModel)]="password" name="password" id="password" type="password" class="validate" required="" aria-required="true">
           <label for="password">Senha</label>
         </div>
         <div class="input-field col s12 m5">

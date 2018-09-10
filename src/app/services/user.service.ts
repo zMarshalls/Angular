@@ -1,33 +1,32 @@
 import {Injectable} from "@angular/core";
-import { User } from '../models/user';
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
+import { GenericService } from "./generic.service";
 
 
 @Injectable({
     providedIn: 'root'
   })
 export class UserService{
-    userRef: AngularFireList<User>;
+    userRef: AngularFireList<any>;
 
-    constructor(private db:AngularFireDatabase){
-        this.userRef = this.db.list('user');
+    constructor(private db:AngularFireDatabase, private service:GenericService){
+        this.service.setEntity("user");
     }
 
 
-    register(user: User){
-        this.userRef.push(user).then(x => console.log('usuario inserido na base'));
+    register(user:any){
+        return this.service.register(user);
     }
 
     delete(){
-
+        this.userRef.remove();
     }
 
-    update(){
-
+    update(user:any){
+        this.userRef.update(user,user);
     }
 
-    search(){
-
+    search(email:string){
+        
     }
-
 }
