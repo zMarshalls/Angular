@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../services/authentication.service';
-import { User } from '../models/user';
-import { UserService } from '../services/user.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { UserService } from '../../services/user.service';
 
 declare var $: any;
 declare var require: any;
@@ -15,13 +14,13 @@ declare var require: any;
 export class NavbarComponent implements OnInit {
 
   logo = 'Oficina Raudel';
-  bgPerfil = require('../imgs/bgperfil.jpg');
+  bgPerfil = require('../../imgs/bgperfil.jpg');
   isConected = false;
   usuario: string;
   email: string;
 
   //Coisas do Usuario
-  img = require('../imgs/user.jpg');
+  img = require('../../imgs/user.jpg');
 
   constructor(private auth: AuthenticationService, private service: UserService) { }
 
