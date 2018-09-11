@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SobreComponent } from './sobre/sobre.component';
-import { ContatoComponent } from './contato/contato.component';
-import { ParceirosComponent } from './parceiros/parceiros.component';
-import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { SobreComponent } from './component/sobre/sobre.component';
+import { ContatoComponent } from './component/contato/contato.component';
+import { ParceirosComponent } from './component/parceiros/parceiros.component';
+import { HomeComponent } from './component/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './component/login/login.component';
+import { SignupComponent } from './component/signup/signup.component';
 
 
 import { AngularFireModule } from 'angularfire2';
