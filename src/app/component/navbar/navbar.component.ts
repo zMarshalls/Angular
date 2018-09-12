@@ -13,13 +13,13 @@ declare var require: any;
 export class NavbarComponent implements OnInit {
 
   logo = 'Oficina Raudel';
-  bgPerfil = require('../../imgs/profile.png');
+  bgPerfil = require('../../imgs/bgperfil.jpg');
   isConected = false;
   usuario: string;
   email: string;
 
   //Coisas do Usuario
-  img = require('../../imgs/user.jpg');
+  img = require('../../imgs/profile.png');
 
   constructor(private auth: AuthenticationService, private service: UserService) { }
 
