@@ -8,7 +8,6 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 
-
 declare var $: any;
 
 @Component({
@@ -27,7 +26,6 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     // Inicializa os elementos
     $('select').formSelect();
-    $('.datepicker').datepicker();
 
     // Inicializa as mascaras
     $('#cpf').mask('000.000.000-00');
@@ -41,9 +39,15 @@ export class SignupComponent implements OnInit {
       return;
     }
     
+    this.submeter();
+  }
+
+  submeter(){
     this.user.cpf = $('#cpf').unmask().val();
     this.user.fone = $('#fone').unmask().val();
     this.user.cep = $('#cep').unmask().val();
+    this.user.isUserConfirmed = false;
+    this.user.isAdmin = false;
 
     this.auth.register(this.user.email, this.password)
       .then(userCredentials => {
@@ -51,7 +55,9 @@ export class SignupComponent implements OnInit {
       })
       .then(newUser => {
         alert("Cadastrado com Sucesso !")
-        this.router.navigate(['/']);
-      }).catch(err => console.log(err))
+        this.router.navigate(['/Login']);
+      }).catch(err => console.log(err));
   }
 }
+
+// validacao de senha http://jsfiddle.net/SirusDoma/ayf832td/

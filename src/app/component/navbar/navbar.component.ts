@@ -5,7 +5,6 @@ import { UserService } from '../../services/user.service';
 declare var $: any;
 declare var require: any;
 
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -14,7 +13,7 @@ declare var require: any;
 export class NavbarComponent implements OnInit {
 
   logo = 'Oficina Raudel';
-  bgPerfil = require('../../imgs/bgperfil.jpg');
+  bgPerfil = require('../../imgs/profile.png');
   isConected = false;
   usuario: string;
   email: string;

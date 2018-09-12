@@ -15,5 +15,6 @@ export class User {
     public numero : string;
     public complemento : string;
     public img: string;
-
+    public isUserConfirmed : boolean;
+    public isAdmin : boolean;
 }
