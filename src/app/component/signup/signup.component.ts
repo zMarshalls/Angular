@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable } from 'rxjs';
 import { AuthenticationService } from '../../services/authentication.service';
 import { User } from '../../models/user';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+
+import { ROTAS } from '../../util/utils'
 
 declare var $: any;
 
@@ -51,8 +51,9 @@ export class SignupComponent implements OnInit {
       })
       .then(newUser => {
         alert("Cadastrado com Sucesso !")
-        this.router.navigate(['/Login']);
+        this.router.navigate([ROTAS.login]);
       }).catch(err => console.log(err));
+      this.auth.logout();
   }
 
   iniciarElementos() {

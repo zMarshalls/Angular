@@ -80,13 +80,6 @@
                 <label for="estado">Estado</label>
               </div>
               <div class="input-field col s12 m5">
-                <input [(ngModel)]="user.municipio" name="municipio" id="municipio" type="text" class="validate" required="" aria-required="true">
-                <label for="municipio">Município</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s12 m10 offset-m1">
                 <input [(ngModel)]="user.cidade" name="cidade" id="cidade" type="text" class="validate" required="" aria-required="true">
                 <label for="cidade">Cidade</label>
               </div>
@@ -126,6 +119,34 @@
           <label>
             <input id="terms" type="checkbox" />
             <span>Aceito os <a routerLink="#modal1">Termos de Condições</a>.</span>
+
+
+
+
+
+
+            
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
           </label>
         </div>
 

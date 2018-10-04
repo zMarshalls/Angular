@@ -1,79 +1,76 @@
 <div class="navbar-fixed">
   <nav>
-    <div class="nav-wrapper grey darken-4">
+    <div class="nav-wrapper purple darken-1">
       <a routerLink="/" class="brand-logo center">{{ logo }}</a>
-
-      <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li>
-          <a routerLink="/">Início</a>
-        </li>
-        <li *ngFor="let item of itMenu">
-          <a routerLink="/{{ item }}">{{ item }}</a>
+          <a [routerLink]="rotas.home" routerLinkActive="active">Início</a>
         </li>
       </ul>
 
-      <div *ngIf="!isConected" class="right hide-on-med-and-down">
-        <ul id="nav-mobile">
-          <li><a id="login" routerLink="/Login">Entrar</a></li>
-          <li><a id="signUp" routerLink="/SignUp">Cadastrar</a></li>
+      <ul id="nav-mobile" class="left hide-on-med-and-down" *ngIf="!isConected">
+        <li>
+          <a [routerLink]="rotas.about" routerLinkActive="active">Sobre</a>
+        </li>
+        <li>
+          <a [routerLink]="rotas.contato" routerLinkActive="active">Contato</a>
+        </li>
+        <li>
+          <a [routerLink]="rotas.parceiros" routerLinkActive="active">Parceiros</a>
+        </li>
+      </ul>
+
+
+
+      <ul id="nav-mobile" class="left hide-on-med-and-down" *ngIf="isConected">
+        <li>
+          <a class="dropdown-trigger" data-target="dropdown1">Marcar</a>
+
+          <!-- Dropdown Structure -->
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="#!">three</a></li>
+            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+          </ul>
+        </li>
+        <li>
+          <a [routerLink]="rotas.parceiros" routerLinkActive="active">Consultar</a>
+        </li>
+      </ul>
+
+
+
+      <div class="right hide-on-med-and-down" *ngIf="!isConected">
+        <ul id="nav-login">
+          <li>
+            <a id="login" [routerLink]="rotas.login" routerLinkActive="active">Entrar</a>
+          </li>
+          <li>
+            <a id="cadastro" [routerLink]="rotas.cadastro" routerLinkActive="active">Cadastrar</a>
+          </li>
         </ul>
       </div>
 
-      <ul *ngIf="isConected" class="right hide-on-med-and-down">
-        <li>
-          <div class="chip">
-            <img [src]="img" alt="Contact Person"> {{ usuario }}
-          </div>
-        </li>
-        <li><a class="dropdown-trigger" data-target="dropdown1"><i class="material-icons right">settings</i></a></li>
-      </ul>
+      <div class="right hide-on-med-and-down" *ngIf="isConected">
+        <ul id="nav-config">
+          <li>
+            <a>
+              <i class="material-icons">settings</i>
+            </a>
+          </li>
+          <li>
+            <a (click)="deslogar()">
+              <i class="material-icons">exit_to_app</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
     </div>
   </nav>
 </div>
-
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a routerLink="">Perfil</a></li>
-  <li><a routerLink="">Marcar</a></li>
-  <li><a routerLink="">Consultar Situação</a></li>
-  <li><a routerLink="">Sair</a></li>
-</ul>
-
-<!-- sidenav -->
-<ul class="sidenav" id="mobile-demo">
-
-  <li *ngIf="!isConected"><a id="login" routerLink="/Login">Entrar</a></li>
-  <li *ngIf="!isConected"><a id="signUp" routerLink="/SignUp">Cadastrar</a></li>
-
-
-  <li *ngIf="isConected">
-    <div class="user-view">
-      <div class="background">
-        <img class="imgBgPerfil" [src]="bgPerfil">
-      </div>
-
-      <div class="row">
-        <div class="col s12 offset-s8">
-          <img class="circle" [src]="img">
-        </div>
-      </div>
-
-
-      <a class="dropdown-trigger" data-target="dropdown1"><span class="white-text name">{{ usuario }}</span></a>
-      <span class="white-text email">{{ email }}</span>
-    </div>
-  </li>
-
-  <li class="divider" tabindex="-1"></li>
-
-  <li>
-    <a routerLink="/">Início</a>
-  </li>
-
-  <li *ngFor="let item of itMenu">
-    <a routerLink="/{{ item }}">{{ item }}</a>
-  </li>
-
-</ul>

@@ -8,7 +8,6 @@ export class User {
     public pais : string;
     public cep : string;
     public estado : string;
-    public municipio : string;
     public cidade : string;
     public bairro : string;
     public rua : string;
